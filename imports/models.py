@@ -27,6 +27,7 @@ class ImportarExportar(models.Model):
         default=None,
         null=True,
         blank=True,
+        verbose_name='CSV file',
         validators=[FileExtensionValidator(allowed_extensions=['csv'])],
     )
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=STATUS_PENDING, db_index=True)
