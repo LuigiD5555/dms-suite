@@ -1,0 +1,86 @@
+services:
+  db:
+    image: mariadb:11
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-change-root-password}
+      DB_APP_NAME: ${DB_APP_NAME:-enterprise_dms_appdata}
+      DB_DATA_NAME: ${DB_DATA_NAME:-enterprise_dms_database}
+      DB_USER: ${DB_USER:-enterprise_dms_user}
+      DB_PASSWORD: ${DB_PASSWORD:-change-app-password}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/mariadb/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'mariadb -h 127.0.0.1 -u"$${DB_USER}" -p"$${DB_PASSWORD}" -e "SELECT 1;" >/dev/null 2>&1']
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    networks:
+      - backend
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    command: >
+      bash -c "python scripts/wait_for_db.py &&
+               python manage.py migrate &&
+               python manage.py migrate data --database=enterprise_data &&
+               python manage.py createsuperbossgroup &&
+               python manage.py import_cp_data_if_empty &&
+               python manage.py collectstatic --no-input &&
+               gunicorn EnterpriseApp.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120"
+    environment:
+      DB_ENGINE: ${DB_ENGINE:-django.db.backends.mysql}
+      DB_APP_NAME: ${DB_APP_NAME:-enterprise_dms_appdata}
+      DB_DATA_NAME: ${DB_DATA_NAME:-enterprise_dms_database}
+      DB_USER: ${DB_USER:-enterprise_dms_user}
+      DB_PASSWORD: ${DB_PASSWORD:-change-app-password}
+      DB_HOST: db
+      DB_PORT: 3306
+      SECRET_KEY: ${SECRET_KEY:-django-insecure-change-me}
+      DEBUG: ${DEBUG:-False}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-localhost,127.0.0.1,app.example.com}
+      CSRF_TRUSTED_ORIGINS: ${CSRF_TRUSTED_ORIGINS:-http://localhost:20001,http://127.0.0.1:20001}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:20001,http://127.0.0.1:20001}
+      COUNTRY: ${COUNTRY:-mx}
+      LANGUAGE_CODE: ${LANGUAGE_CODE:-es-mx}
+      TIME_ZONE: ${TIME_ZONE:-America/Mexico_City}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    volumes:
+      - static_volume:/usr/share/nginx/html
+      - media_volume:/app/media
+      # To load ZIP codes at startup, uncomment this and place cp.csv in ./seed/
+      # - ./seed:/seed:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - backend
+
+  web:
+    image: nginx:stable
+    restart: always
+    ports:
+      - "20001:80"
+      - "4343:443"
+    volumes:
+      - ./default.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - static_volume:/usr/share/nginx/html:ro
+      - media_volume:/app/media:ro
+      - ./letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - app
+    networks:
+      - backend
+
+networks:
+  backend:
+
+volumes:
+  db_data:
+  static_volume:
+  media_volume:

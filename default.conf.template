@@ -1,0 +1,30 @@
+server {
+    listen 80;
+    server_name 10.0.0.0 192.168.0.200 10.1.0.0 app.example.com www.app.example.com;
+    location / {
+        proxy_pass http://app:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        # Add CORS headers
+        add_header 'Access-Control-Allow-Origin' 'http://10.1.0.0:20001' always;
+        add_header 'Access-Control-Allow-Origin' 'http://10.0.0.0:20001' always;
+        add_header 'Access-Control-Allow-Origin' 'http://192.168.0.200:20001' always;
+        add_header 'Access-Control-Allow-Origin' 'http://app.example.com' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+    }
+
+    location /media/ {
+        alias /app/media/;
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Allow-Methods "GET, POST, OPTIONS";
+    }
+
+    location /static/ {
+        autoindex on;
+        alias /usr/share/nginx/html/;
+    }
+}

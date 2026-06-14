@@ -1,0 +1,40 @@
+{
+  "DEPARTMENT_CHOICES": [
+    [1, "Administration"],
+    [2, "Operations"],
+    [3, "Human resources"],
+    [4, "Finance"],
+    [5, "Technology"],
+    [6, "Legal / compliance"],
+    [7, "Other"]
+  ],
+  "LOCALES": [
+    ["mx", "Mexico"],
+    ["us", "United States"],
+    ["global", "Global"]
+  ],
+  "ORGANIZATION_STATUS": [
+    ["active", "Active"],
+    ["inactive", "Inactive"],
+    ["archived", "Archived"]
+  ],
+  "PERSON_STATUS": [
+    ["active", "Active"],
+    ["candidate", "Candidate / prospect"],
+    ["inactive", "Inactive"],
+    ["archived", "Archived"]
+  ],
+  "DOCUMENT_STATUS": [
+    ["pending", "Pending"],
+    ["current", "Current"],
+    ["expired", "Expired"],
+    ["rejected", "Rejected"],
+    ["archived", "Archived"]
+  ],
+  "PROCESS_STATUS": [
+    ["open", "Open"],
+    ["blocked", "Blocked"],
+    ["complete", "Completed"],
+    ["cancelled", "Cancelled"]
+  ]
+}

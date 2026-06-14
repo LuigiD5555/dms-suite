@@ -1,0 +1,17 @@
+# Install only in the local development environment:
+#   pip install -r requirements.txt -r requirements-dev.txt
+#
+# These dependencies are useful for linting, debugging, and diagrams,
+# but they are NOT required to run Django/Gunicorn in production.
+# Mantenerlas fuera de requirements.txt evita errores de build como:
+#   Dependency 'girepository-2.0' is required but not found.
+-r requirements.txt
+
+django-extensions~=3.2.3
+flake8~=7.0.0
+
+# Optional for local diagrams/UML.
+# They require system libraries such as Graphviz, GObject, Cairo y girepository.
+# Uncomment only if needed and already installed on your local machine.
+# gaphor~=2.9.2
+# pygraphviz~=1.12

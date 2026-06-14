@@ -1,0 +1,56 @@
+{
+  "locales": {
+    "mx": {
+      "country_info": {
+        "name": "Mexico",
+        "official_name": "Mexico",
+        "country_code": "mx",
+        "language_code": "en-us",
+        "time_zone": "America/Mexico_City"
+      },
+      "i18n": {
+        "use_i18n": true,
+        "use_l10n": true,
+        "use_tz": true
+      },
+      "currency": {
+        "name": "MXN",
+        "symbol": "$",
+        "symbol_position": "before",
+        "decimal_separator": ".",
+        "thousands_separator": ",",
+        "decimal_places": 2
+      },
+      "phone": {
+        "code": "+52",
+        "pattern": "^\\+?\\d[\\d\\s().-]{6,30}$"
+      }
+    },
+    "us": {
+      "country_info": {
+        "name": "United States",
+        "official_name": "United States of America",
+        "country_code": "us",
+        "language_code": "en-us",
+        "time_zone": "America/New_York"
+      },
+      "i18n": {
+        "use_i18n": true,
+        "use_l10n": true,
+        "use_tz": true
+      },
+      "currency": {
+        "name": "USD",
+        "symbol": "$",
+        "symbol_position": "before",
+        "decimal_separator": ".",
+        "thousands_separator": ",",
+        "decimal_places": 2
+      },
+      "phone": {
+        "code": "+1",
+        "pattern": "^\\+?\\d[\\d\\s().-]{6,30}$"
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "default_data": {
+    "organization_name": "",
+    "organization_legal_name": "",
+    "organization_tax_id": "",
+    "organization_email": "",
+    "organization_phone": "",
+    "site_name": "",
+    "person_full_name": "",
+    "person_external_id": "",
+    "person_email": "",
+    "person_phone": "",
+    "person_role": "",
+    "person_department": "",
+    "document_title": "",
+    "document_category": "",
+    "document_status": "",
+    "document_issue_date": "",
+    "document_expiration_date": "",
+    "dossier_name": "",
+    "dossier_status": "",
+    "case_title": "",
+    "case_status": "",
+    "case_due_date": "",
+    "report_date": "",
+    "notes": ""
+  }
+}

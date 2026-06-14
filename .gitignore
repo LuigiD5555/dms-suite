@@ -1,0 +1,58 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Virtual environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+ENV/
+
+# Django generated / local data
+/db.sqlite3
+/db.sqlite3-app
+/db.sqlite3-data
+*.sqlite3
+/media/uploads/
+/media/reports/
+/media/temporal/
+/media/file_templates/modified_*
+/media/file_templates/temporal.*
+/media/file_templates/Erasable/
+/staticfiles/
+
+# Secrets and certificates
+*.key
+*.pem
+secrets/
+letsencrypt/
+
+# Node / frontend
+node_modules/
+static/node_modules/
+npm-debug.log
+package-lock.json
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.lh/
+docs/

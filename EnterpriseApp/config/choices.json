@@ -1,0 +1,28 @@
+{
+  "personnel_status": [
+    {"value": "active", "label": "Active"},
+    {"value": "inactive", "label": "Inactive"},
+    {"value": "on_leave", "label": "On Leave"},
+    {"value": "terminated", "label": "Terminated"}
+  ],
+  "genders": [
+    {"value": "M", "label": "Male"},
+    {"value": "F", "label": "Female"},
+    {"value": "O", "label": "Other"},
+    {"value": "N", "label": "Prefer not to say"}
+  ],
+  "departments": [
+    {"value": "operations", "label": "Operations"},
+    {"value": "hr", "label": "Human Resources"},
+    {"value": "finance", "label": "Finance"},
+    {"value": "legal", "label": "Legal"},
+    {"value": "it", "label": "Information Technology"}
+  ],
+  "document_status": [
+    {"value": "draft", "label": "Draft"},
+    {"value": "pending_review", "label": "Pending review"},
+    {"value": "approved", "label": "Approved"},
+    {"value": "rejected", "label": "Rejected"},
+    {"value": "archived", "label": "Archived"}
+  ]
+}

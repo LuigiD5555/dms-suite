@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+APP_DB="${DB_APP_NAME:-enterprise_dms_appdata}"
+DATA_DB="${DB_DATA_NAME:-enterprise_dms_database}"
+APP_USER="${DB_USER:-enterprise_dms_user}"
+APP_PASSWORD="${DB_PASSWORD:-replace-me}"
+ROOT_PASSWORD="${MARIADB_ROOT_PASSWORD:-${MYSQL_ROOT_PASSWORD:-}}"
+
+if [ -z "$ROOT_PASSWORD" ]; then
+  echo "MARIADB_ROOT_PASSWORD/MYSQL_ROOT_PASSWORD is required" >&2
+  exit 1
+fi
+
+mariadb -uroot -p"$ROOT_PASSWORD" <<SQL
+CREATE DATABASE IF NOT EXISTS \`$APP_DB\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS \`$DATA_DB\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS '$APP_USER'@'%' IDENTIFIED BY '$APP_PASSWORD';
+GRANT ALL PRIVILEGES ON \`$APP_DB\`.* TO '$APP_USER'@'%';
+GRANT ALL PRIVILEGES ON \`$DATA_DB\`.* TO '$APP_USER'@'%';
+FLUSH PRIVILEGES;
+SQL
