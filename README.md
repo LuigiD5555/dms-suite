@@ -358,18 +358,4 @@ It is especially relevant for roles involving Django, backend development, REST 
 
 ## License
 
-MIT, unless another license is selected before publication.
-
-## Docker startup notes
-
-The database container performs a first-time initialization before it accepts
-normal TCP connections. The app container waits for MariaDB to be reachable
-before running migrations, which avoids startup race conditions such as:
-
-```text
-OperationalError: (2002, "Can't connect to server on 'db' (115)")
-```
-
-The MariaDB log may also show an `io_uring` warning and then fall back to
-`libaio`. That warning is usually related to container/kernel permissions and is
-not the same as a Django application failure.
+This project is distributed under the [MIT License](LICENSE).
