@@ -1,0 +1,10 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_urls %}
+{% block object-tools-items %}
+    {{ block.super }}
+      <li>
+        <a href="{% url 'admin:auth_group_changelist' %}" class="link">
+          {% translate 'Ver Grupos' %}
+        </a>
+      </li>
+{% endblock %}

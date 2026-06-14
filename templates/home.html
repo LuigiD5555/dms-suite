@@ -1,0 +1,26 @@
+<!-- Home -->
+{% extends "base.html" %}
+{% block extrahead %}
+    {% load static %}
+
+    <!-- Custom styles -->
+
+    <link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="{% static 'css/home2.css' %}"
+    >
+
+    <title>
+      Enterprise DMS
+    </title>
+
+{% endblock %}
+
+{% block right %}
+  <div class="background-container">
+    <div class="logo-container">
+      <img src="{% static 'img/generic_logo.svg' %}" alt="Logo" class="img-background">
+    </div>    
+  </div>
+{% endblock %}

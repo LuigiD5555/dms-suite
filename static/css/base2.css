@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.workspace {
+    display: flex;
+    height: 100vh;
+}
+.left {
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(246, 255, 255);
+}
+
+.left a {
+    display: block;
+    margin-bottom: 16px;
+    text-align: center;
+    width: 70%;
+}
+
+.left a.btn {
+    display: flex;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(238, 155, 0);
+    border-radius: .25rem;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    font-size: 16px; 
+    line-height: 16px; 
+    border-radius: 8px; 
+    font-weight: 450;
+}
+
+.left a.btn:hover {
+    background-color: rgb(242,180,64);
+}
+
+.left a.btn:focus,
+.left a.btn.focus {
+    outline: 0;
+    box-shadow: #F7DC6F;
+}
+
+.left a.btn.disabled,
+.left a.btn:disabled {
+    opacity: .65;
+}
+
+.right {
+    flex-basis: 85%;
+    background-color: rgb(246, 255, 255);
+    padding-top: 70px;
+}
+
+.floating-bg{
+    background-color: rgb(253, 253, 253);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    width: 93%;
+    height: 97.5%;
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+    margin: 0px auto;
+}
+
+.navbar {
+    height: 75px; 
+    margin-top: -5px;
+}
+
+.navbar form .form-control {
+    height: 35px;
+}
+
+.navbar form .btn {
+    height: 35px; 
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+.navbar-toggler {
+    height: 42px; 
+    width: 47px;
+    padding-top: 2%;
+    padding-left: 3%;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.offcanvas {
+    --bs-offcanvas-width: 320px;
+}
+
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+#offcanvas-button-container {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 75px;
+}
+        
+.container-offcanvas {
+    padding-left: 15px; 
+    margin-top: 0px; 
+    margin-bottom: 0px;
+    margin-left: -15px;
+    margin-right: -31px;
+}
+
+.container-offcanvas:hover {
+    background-color: rgba(0,0,0,0.5);
+}

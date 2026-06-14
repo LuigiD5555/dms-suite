@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="180" viewBox="0 0 640 180" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise DMS logo placeholder</title>
+  <desc id="desc">Generic placeholder logo for a document management system.</desc>
+  <rect width="640" height="180" rx="24" fill="#f8fafc"/>
+  <rect x="40" y="34" width="92" height="112" rx="14" fill="#e2e8f0" stroke="#334155" stroke-width="5"/>
+  <path d="M68 66h36M68 88h44M68 110h30" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <text x="160" y="82" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#0f172a">Enterprise DMS</text>
+  <text x="162" y="122" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#475569">Document · Personnel · Reports</text>
+</svg>

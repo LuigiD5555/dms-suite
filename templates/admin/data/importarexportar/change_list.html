@@ -1,0 +1,17 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_urls %}
+
+{% block object-tools %}
+    {% if has_add_permission %}
+        <ul class="object-tools">
+            <li>
+                <a href="{% url 'admin:data_importarexportar_add' %}" class="btn btn-primary">
+                    {% blocktrans with cl.opts.verbose_name as name %}Add {{ name }}{% endblocktrans %}
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'download_import_template' %}" class="btn btn-primary">Download CSV Template</a>
+            </li>
+        </ul>
+    {% endif %}
+{% endblock %}

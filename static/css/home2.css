@@ -1,0 +1,34 @@
+.background-container {
+    background-color: rgb(253, 253, 253);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* make the right container occupy the remaining space */
+    background-image: url("../img/generic_background.svg"); 
+    background-size: cover; /* scale the background image to cover the container */
+    background-repeat: no-repeat; /* prevent the image from repeating when the container overflows */
+    flex-direction: column;
+    height: 100%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.floating-bg{
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+body{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(246, 255, 255);
+  }

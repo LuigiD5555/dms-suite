@@ -1,0 +1,153 @@
+/*----------------------------------------- base -----------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.form{
+    padding: 30px 40px;
+}
+
+.form aligned input + div.help{
+    margin-left: 160px;
+    padding-left: 10px;
+}
+
+.form aligned div.help {
+    clear: left;
+    margin-top: 0;
+    margin-left: 160px;
+    padding-left: 10px;
+}
+
+.form-row div.help {
+    padding: 2px 3px;
+}
+
+.help, p.help, form p.help, div.help, form div.help, div.help li {
+    font-size: 0.6875rem;
+    color: var(--body-quiet-color);
+}
+
+p {
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.form-control label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    width: 100%;
+    padding: 5px 15px;
+    font-size: 16px;
+    border: 1px solid rgb(158, 158, 158);
+}
+
+.form-control i.fa-check{
+    position: absolute;
+    top: 35px;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 10px;
+    color: rgb(60, 199, 94);
+    visibility: hidden;
+}
+
+.form-control i.fa-close{
+    position: absolute;
+    top: 35px;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 10px;
+    color: rgb(199, 60, 60);
+    visibility: hidden;
+}
+
+.form-control input:focus{
+    outline: none;
+    border: 1px solid rgb(110, 110, 110)
+}
+
+.form-control small{
+    color: rgb(199, 60, 60);
+    visibility: hidden;
+}
+
+.form-control span{
+    font-size: 14px;
+    position: absolute;
+    top: 35px;
+    right: 0px;
+    margin-right: 30px;
+    visibility: hidden;
+}
+
+.form-control span.strong{
+    color: rgb(60, 199, 94);
+    visibility: hidden;
+}
+
+.form-control span.middle{
+    color: rgb(248, 211, 0);
+    visibility: hidden;
+}
+
+.form-control span.week{
+    color: rgb(199, 60, 60);
+    visibility: hidden;
+}
+
+.form button.btn{
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(238, 155, 0);
+    color: #fff;
+}
+
+.form button.btn:hover {
+    color: #fff;
+    background-color: rgb(242,180,64);
+}
+
+.form-control .sucsess input{
+    outline: 4px solid rgb(214, 222, 255);
+    border: 1px solid rgb(121, 171, 225);
+}
+
+.form-control.error input{
+    border: 1px solid rgb(199, 60, 60);
+}
+
+.form-control.error small{
+    visibility: visible;
+}
+
+.select{
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 3.5px;
+    background-color: #fff;
+}
+
+.select:focus{
+    outline: 4.2px solid rgb(194,208,255);
+    border: 1px solid rgb(121, 171, 225);
+}

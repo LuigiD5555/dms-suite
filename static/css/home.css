@@ -1,0 +1,23 @@
+.right-container {
+    background-color: rgb(253, 253, 253);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    width: 800px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    margin-right: -35px;
+    flex-grow: 1; /* make the right container occupy the remaining space */
+    background-image: url("../img/generic_background.svg"); 
+    background-size: cover; /* scale the background image to cover the container */
+    background-repeat: no-repeat; /* prevent the image from repeating when the container overflows */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Use the full container height for vertical centering. */
+    opacity: 0.5;
+}

@@ -1,0 +1,89 @@
+.btn-main {
+    padding: 10px 20px;
+    border-width: 1px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(238, 155, 0);
+    border-radius: .25rem;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px; 
+    line-height: 16px; 
+    border-radius: 5px; 
+}
+
+.btn-main:hover {
+    background-color: rgb(208,136,0);
+    color: #fff;
+}
+
+.btn-main:focus,
+.btn-main.focus {
+    outline: 0;
+    box-shadow: #F7DC6F;
+}
+
+.btn-main.disabled,
+.btn-main:disabled {
+    opacity: .65;
+}
+
+.buttons-container {
+    position: relative;
+    align-items: center;    
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: transparent;
+  }
+  
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+.container {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
+.search-form {
+    position: relative;
+    left: 45%;
+  }
+  
+.form-control {
+    width: 50%;
+  }
+
+.floating-bg {
+  /* justify-content: space-between; */
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  flex-wrap: wrap;
+  padding-right: 15px; /* Add this line to account for the scrollbar width */
+}
+
+.floating-bg iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

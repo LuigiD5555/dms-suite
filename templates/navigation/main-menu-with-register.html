@@ -1,0 +1,81 @@
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid justify-content-between align-items-center">
+    <div class="navbar-brand">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="/static/img/generic_logo_small.svg" alt="Bootstrap" width="134" height="48">
+      </a>
+    </div>
+    {% comment %} 
+    <form class="d-flex mt-3" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button type="button" class="btn btn-outline-secondary btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+        </svg>
+      </button>
+    </form> {% endcomment %}
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" 
+    aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvasNavbarLabel">Enterprise DMS</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav flex-grow-1">
+          <li class="nav-item">
+            <div class="container-offcanvas" id="offcanvas-option-container">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="offcanvas-divider mt-3">
+          </li>
+          <li class="nav-item">
+            <div class="container-offcanvas" id="offcanvas-option-container">
+              <a class="nav-link active" aria-current="page" href="{% url 'profile' user.id %}">Account</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="offcanvas-divider mt-3">
+          </li>
+          <li class="nav-item">
+            <div class="container-offcanvas" id="offcanvas-option-container">
+              <a class="nav-link active" aria-current="page" href="{% url 'history' user.id %}">History</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="offcanvas-divider mt-3">
+          </li>
+          <li class="nav-item">
+            <div class="container-offcanvas" id="offcanvas-option-container">
+              <a class="nav-link active" aria-current="page" href="#">
+                Ajustes
+              </a>
+            </div>
+          </li>
+          {% if is_register_enabled %}
+            <li class="nav-item">
+              <hr class="offcanvas-divider mt-3">
+            </li>
+            <li class="nav-item">
+              <div class="container-offcanvas" id="offcanvas-option-container">
+                <a class="nav-link active" aria-current="page" href="/register/">
+                  Register New User
+                </a>
+            </li>
+          {% endif %}
+        </ul>
+          <div id="offcanvas-button-container" class="offcanvas-body mt-auto d-flex justify-content-end">
+            <a class="btn btn-danger w-auto" href="/logout/">
+              <img src="/static/img/power_settings.svg" alt="icon beside logout text">
+              Logout
+            </a>
+          </div>
+      </div>
+    </div>
+  </div>
+</nav>

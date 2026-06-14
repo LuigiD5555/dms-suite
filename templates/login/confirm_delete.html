@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block right %}
+  <div class="container">
+    <h1>Delete Confirmation</h1>
+    <p>Are you sure you want to delete the selected users?</p>
+    <form method="post" action="{% url 'eliminar_usuarios' %}">
+      {% csrf_token %}
+      {% for id in selected_user_ids %}
+        <input type="hidden" name="selected_users" value="{{ id }}">
+      {% endfor %}
+      <button type="submit" name="confirm_delete" class="btn btn-danger">Yes</button>
+      <button type="submit" class="btn btn-primary">No</button>
+    </form>
+  </div>
+{% endblock %}
